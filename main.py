@@ -44,11 +44,15 @@ async def on_member_join(member):
     member.name
     if channel is not None:
         random_welcome_message = random.choice(welcome_messages)
-        await member.send(f'Slm 😍 {member.mention} Aziz \n'
-                          'Be server NilooFar Vafaei Khosh Omadi! \n'
-                          'Omid varam lahazat khoshi ro dar in server separi kni!\n'
-                          'lotfan ghabl az har kari channel <#1074594474895876146> ra motalee konid!')
-        await channel.send(f'{random_welcome_message} \n {member.mention}!')
+        try :
+            await member.send(f'Slm 😍 {member.mention} Aziz \n'
+                              'Be server NilooFar Vafaei Khosh Omadi! \n'
+                              'Omid varam lahazat khoshi ro dar in server separi kni!\n'
+                              'lotfan ghabl az har kari channel <#1074594474895876146> ra motalee konid!')
+            await channel.send(f'{random_welcome_message} \n {member.mention}!')
+        except:
+            await channel.send(f'{random_welcome_message} \n {member.mention}!')
+
 
 
 # auto response bot
